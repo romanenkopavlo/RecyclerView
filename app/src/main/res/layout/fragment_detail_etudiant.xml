@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="etudiant"
+                  type="com.michael.rv_2024.models.DataViewModelDetail"></variable>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_detail_nom"
+                android:text="@{etudiant.data.firstname}"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_detail_prenom"
+                android:text="@{etudiant.data.lastname}"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_nom"
+                android:layout_marginTop="20dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_detail_age"
+                android:text="@{etudiant.data.age}"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail_prenom"
+                android:layout_marginTop="20dp"/>
+        <ImageView
+                android:layout_width="144dp"
+                android:layout_height="203dp"
+                tools:srcCompat="@tools:sample/avatars"
+                android:id="@+id/imageView"
+                lireImageUrl="@{etudiant.data.image}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.717"
+                android:layout_marginEnd="132dp"
+                tools:ignore="ImageContrastCheck"
+                android:contentDescription="TODO"/>
+        <ImageButton
+                android:src="@android:drawable/ic_menu_revert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/imageButton"
+                tools:ignore="MissingConstraints" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
